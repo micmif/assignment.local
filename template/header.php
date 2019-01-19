@@ -24,7 +24,7 @@
             <nav id="sidebar-nav">
                 <ul class="nav flex-column">
                     <li class="nav-item dropright">
-                        <a href="newsfeed.php" class="nav-link">
+                        <a href="index.php" class="nav-link">
                             <i class="icon far fa-newspaper"></i>
                             <span>Home</span>
                         </a>

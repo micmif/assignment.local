@@ -20,13 +20,13 @@
     <div class="col-12 col-lg-9">
         <div class="card">
             <div class="card-body">
-<?php if (has_error($formdata, 'sub-title')): ?>
+<?php if (has_error($formdata, 'sub_title')): ?>
                 <div class="alert-danger mb-3 p-3">
-                    <?php echo get_error($formdata, 'sub-title'); ?>
+                    <?php echo get_error($formdata, 'sub_title'); ?>
                 </div>
 <?php endif; ?>
-                <input type="text" name="sub-title" class="form-control mb-3" placeholder="Title"
-                    value="<?php echo get_value($formdata, 'sub-title'); ?>">
+                <input type="text" name="sub_title" class="form-control mb-3" placeholder="Title"
+                    value="<?php echo get_value($formdata, 'sub_title'); ?>">
 
 <?php if (has_error($formdata, 'reason')): ?>
                 <div class="alert-danger mb-3 p-3">
@@ -35,16 +35,16 @@
 <?php endif; ?>
                 <textarea name="reason" rows="8" cols="80" placeholder="The reason why you're requesting an extention." class="form-control mb-3"><?php echo get_value($formdata, 'reason'); ?></textarea>
 
-<?php if (has_error($formdata, 'sub-date')): ?>
+<?php if (has_error($formdata, 'sub_date')): ?>
             <div class="alert-danger mb-3 p-3">
-                <?php echo get_error($formdata, 'sub-date'); ?>
+                <?php echo get_error($formdata, 'sub_date'); ?>
             </div>
 <?php endif; ?>
                 <div class="form-group row">
-                    <label for="input-episode-airdate" class="col-sm-3 col-form-label">Submission Date:</label>
+                    <label for="input-sub-date" class="col-sm-3 col-form-label">Submission Date:</label>
                     <div class="col-sm-9">
-                        <input type="text" name="sub-date" class="form-control mb-3" placeholder="01/01/2019"
-                            id="input-sub-date" value="<?php echo get_value($formdata, 'sub-date'); ?>">
+                        <input type="text" name="sub_date" class="form-control mb-3" placeholder="01/01/2019"
+                            id="input-sub-date" value="<?php echo get_value($formdata, 'sub_date'); ?>">
                     </div>
                 </div>
             </div>

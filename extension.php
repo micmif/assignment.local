@@ -41,9 +41,9 @@
 <?php while($row = mysqli_fetch_assoc($sub_title)): ?>
                         <tr>
                             <td><span class="counter"></span></td>
-                            <td><?php echo $row['sub-title']; ?></td>
+                            <td><?php echo $row['sub_title']; ?></td>
                             <td><?php echo $row['reason']; ?></td>
-                            <td><?php echo $row['sub-date']; ?></td>
+                            <td><?php echo $row['sub_date']; ?></td>
                             <td>
                                 <a href="ext-delete.php?id=<?php echo $row['sub_title']; ?>">
                                     <i class="icon fas fa-trash"></i>

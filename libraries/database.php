@@ -35,9 +35,6 @@
         // the sequence means: string string integer
         mysqli_stmt_bind_param($stmt, 'ssi', $title, $note, $tbl_users_id);
 
-        // 4. Execute the statement.
-        mysqli_stmt_execute($stmt);
-
         // 5. Disconnect from the database.
         disconnect($link);
 
@@ -54,14 +51,14 @@
         // to take care of any potential SQL injections.
         $stmt = mysqli_prepare($link, "
             INSERT INTO tbl_submission
-                (sub-title, reason, sub-date, tbl_users_id)
+                (sub_title, reason, sub_date, tbl_users_id)
             VALUES
                 (?, ?, ?, ?)
         ");
 
         // 3. Bind the parameters so we don't have to do the work ourselves.
-        // the sequence means: string string string integer
-        mysqli_stmt_bind_param($stmt, 'sssi', $sub_title, $reason, $sub_date, $tbl_users_id);
+        // the sequence means: string string integer integer
+        mysqli_stmt_bind_param($stmt, 'ssii', $sub_title, $reason, $sub_date, $tbl_users_id);
 
         // 4. Execute the statement.
         mysqli_stmt_execute($stmt);
