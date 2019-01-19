@@ -20,13 +20,13 @@
     <div class="col-12 col-lg-9">
         <div class="card">
             <div class="card-body">
-<?php if (has_error($formdata, 'note-title')): ?>
+<?php if (has_error($formdata, 'title')): ?>
                 <div class="alert-danger mb-3 p-3">
-                    <?php echo get_error($formdata, 'note-name'); ?>
+                    <?php echo get_error($formdata, 'title'); ?>
                 </div>
 <?php endif; ?>
-                <input type="text" name="note-title" class="form-control mb-3" placeholder="Title"
-                    value="<?php echo get_value($formdata, 'note-title'); ?>">
+                <input type="text" name="title" class="form-control mb-3" placeholder="Title"
+                    value="<?php echo get_value($formdata, 'title'); ?>">
 
 <?php if (has_error($formdata, 'note-body')): ?>
                 <div class="alert-danger mb-3 p-3">

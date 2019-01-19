@@ -55,13 +55,6 @@
                     </li>
 
                   <li class="nav-item dropright">
-                      <a href="handbook.php" class="nav-link">
-                        <i class="icon fas fa-book-reader"></i>
-                          <span>Handbook</span>
-                      </a>
-                  </li>
-
-                  <li class="nav-item dropright">
                   <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="icon fas fa-file-signature"></i>
                       <span>Form Submission</span>
