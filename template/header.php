@@ -30,13 +30,60 @@
                         </a>
                     </li>
 
-                    <ul class="nav flex-column">
                         <li class="nav-item dropright">
-                            <a href="notes.php" class="nav-link">
-                                <i class="icon far fa-sticky-note"></i>
-                                <span>Notes</span>
-                            </a>
-                        </li>
+                        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="icon far fa-sticky-note"></i>
+                            <span>Notes</span>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a href="notes.php" class="nav-link">
+                                        <i class="icon fas fa-bars"></i>
+                                        <span>All Notes</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="notes-add.php" class="nav-link">
+                                        <i class="icon fas fa-plus"></i>
+                                        <span>Add Note</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                  <li class="nav-item dropright">
+                      <a href="handbook.php" class="nav-link">
+                        <i class="icon fas fa-book-reader"></i>
+                          <span>Handbook</span>
+                      </a>
+                  </li>
+
+                  <li class="nav-item dropright">
+                  <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="icon fas fa-file-signature"></i>
+                      <span>Form Submission</span>
+                  </a>
+
+                  <div class="dropdown-menu">
+                      <ul class="nav">
+                          <li class="nav-item">
+                              <a href="extension.php" class="nav-link">
+                                  <i class="icon fas fa-pencil-alt"></i>
+                                  <span>Extension Requests</span>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="extension-add.php" class="nav-link">
+                                  <i class="icon fas fa-pencil-alt"></i>
+                                  <span>New Extension</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
 
                     <li class="nav-item">
                         <a href="logout.php" class="nav-link">

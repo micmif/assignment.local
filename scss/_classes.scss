@@ -1,7 +1,7 @@
 // main: style.scss
 
 .navbar {
-    background-color: color($theme, 'light');
+    background-color: color($theme, 'primary');
     border-bottom: 1px solid color($theme, 'borders');
     min-height: size($layout, 'navbar');
     padding: 0;

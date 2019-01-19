@@ -60,5 +60,5 @@
     }
 
     # 10. Redirect to the homepage.
-    redirect();
+    redirect('newsfeed');
 ?>
