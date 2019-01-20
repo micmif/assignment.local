@@ -1,16 +1,15 @@
 <?php
     include 'libraries/database.php';
     include 'libraries/login-check.php';
-
     include 'template/header.php';
 
 //Different users will have their personal extentions
-    $sub_title = get_all_extentions($_COOKIE['id']);
+    $sub_id = get_all_extensions($_COOKIE['id']);
 ?>
 
 <header class="page-header row no-gutters py-4 border-bottom">
     <div class="col-12">
-        <h6 class="text-center text-md-left">Extention Requests</h6>
+        <h6 class="text-center text-md-left">Extension Requests</h6>
         <h3 class="text-center text-md-left">All Extentions</h3>
     </div>
 </header>
@@ -21,9 +20,9 @@
         <div class="card">
             <div class="card-header border-bottom-0">
               <div class="float-right">
-                    <a href="/extension-add.php">New Extention</a>
+                    <a href="/extension-add.php">New Extension</a>
                 </div>
-                <h6 class="m-0">Extention</h6>
+                <h6 class="m-0">Extension</h6>
             </div>
 
             <div class="card-body p-0 text-center">
@@ -38,14 +37,14 @@
                         </tr>
                     </thead>
                     <tbody>
-<?php while($row = mysqli_fetch_assoc($sub_title)): ?>
+<?php while($row = mysqli_fetch_assoc($sub_id)): ?>
                         <tr>
                             <td><span class="counter"></span></td>
                             <td><?php echo $row['sub_title']; ?></td>
                             <td><?php echo $row['reason']; ?></td>
                             <td><?php echo $row['sub_date']; ?></td>
                             <td>
-                                <a href="ext-delete.php?id=<?php echo $row['sub_title']; ?>">
+                                <a href="extension-delete.php?id=<?php echo $row['sub_id']; ?>">
                                     <i class="icon fas fa-trash"></i>
                                 </a>
                             </td>

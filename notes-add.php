@@ -33,7 +33,7 @@
                     <?php echo get_error($formdata, 'note-body'); ?>
                 </div>
 <?php endif; ?>
-                <textarea name="note-body" rows="8" cols="80" placeholder="Write your note" class="form-control mb-3"><?php echo get_value($formdata, 'body'); ?></textarea>
+                <textarea name="note-body" rows="8" cols="80" placeholder="Write your note" class="form-control mb-3"><?php echo get_value($formdata, 'note-body'); ?></textarea>
 
             </div>
         </div>

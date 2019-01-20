@@ -4,19 +4,19 @@
     include 'libraries/login-check.php';
 
     // 1. Store the id for the show in a variable.
-    $noteid = $_GET['id'];
+    $id = $_GET['id'];
 
     // 2. Checking if note exists
 
-    if (!$noteid = get_notes($noteid))
+    if (!$ext = get_extension($id))
     {
         exit("This note doesn't exist.");
     }
 
-    if (!delete_note($noteid))
+    if (!delete_extension($id))
     {
         exit("The note could not be deleted.");
     }
 
-    redirect('notes');
+    redirect('extension');
 ?>

@@ -1,9 +1,12 @@
 <?php
     include 'libraries/database.php';
     include 'libraries/login-check.php';
+    include 'libraries/form.php';
 
-    // pages can be built using templates.
     include 'template/header.php';
+
+    $formdata = get_formdata();
+    $posts = get_all_posts();
 ?>
 
 <header class="page-header row no-gutters py-4 border-bottom">
@@ -11,15 +14,15 @@
         <h3 class="text-center text-md-left">Updates</h3>
     </div>
 </header>
-
+          <form class="row content" action="post-add-process.php" method="post">
               <div class="card gedf-card">
                     <div class="card-body">
-                        <div class="tab-content" id="myTabContent">
-                                <div class="form-group">
-                                    <label class="sr-only" for="message">post</label>
-                                    <textarea class="form-control" id="message" rows="3" placeholder="What are you thinking?"></textarea>
-                                </div>
-                        </div>
+                      <?php if (has_error($formdata, 'content')): ?>
+                                      <div class="alert-danger mb-3 p-3">
+                                          <?php echo get_error($formdata, 'content'); ?>
+                                      </div>
+                      <?php endif; ?>
+                                      <textarea name="content" rows="2" cols="160" placeholder="What's on your mind?" class="form-control mb-3"><?php echo get_value($formdata, 'content'); ?></textarea>
                         <div class="btn-toolbar justify-content-between">
                             <div class="btn-group">
                                 <button type="submit" class="btn btn-primary">share</button>
@@ -27,7 +30,13 @@
                         </div>
                     </div>
                 </div>
-                <!--Post 1-->
+
+        </form>
+<?php while ($row = mysqli_fetch_assoc($posts)):
+
+$post_time = intdiv((time() - $row['time']), 60);
+?>
+
                 <div class="card gedf-card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -35,22 +44,19 @@
                                 <div class="mr-2">
                                     <img class="rounded-circle" width="35" img src="icon.png" alt="">
                                 </div>
+                                <!--calling the name and surname of the logged in user-->
                                 <div class="ml-2">
-                                    <div class="h5 m-0">Michela Mifsud</div>
+                                    <div class="h5 m-0"><?php echo $row['name']; ?> <?php echo $row['surname']; ?></div>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                     <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="far fa-clock"></i>10 min ago</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
-                        </a>
-
+                        <div class="text-muted h7 mb-2"> <i class="far fa-clock"></i> <?php echo $post_time;?> minutes ago</div>
+<!--calling the post content of the logged in user-->
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
-                            sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                            <?php echo $row['post_content']; ?>
                         </p>
                     </div>
                     <div class="card-footer">
@@ -58,78 +64,7 @@
                         <a href="#" class="card-link"><i class="far fa-comment"></i> Comment</a>
                     </div>
                 </div>
-                <!-- End Post 1-->
-
-                <!--Post 2-->
-                <div class="card gedf-card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="mr-2">
-                                    <img class="rounded-circle" width="35" img src="icon.png" alt="">
-                                </div>
-                                <div class="ml-2">
-                                    <div class="h5 m-0">Andrew Tanti</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="far fa-clock"></i>15 min ago</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
-                        </a>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
-                            sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link"><i class="far fa-thumbs-up"></i> Like</a>
-                        <a href="#" class="card-link"><i class="far fa-comment"></i> Comment</a>
-                    </div>
-                </div>
-                <!-- End Post 2-->
-
-                <!--Post 3-->
-                <div class="card gedf-card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="mr-2">
-                                    <img class="rounded-circle" width="35" img src="icon.png" alt="">
-                                </div>
-                                <div class="ml-2">
-                                    <div class="h5 m-0">Andrew Tanti</div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="far fa-clock"></i>15 min ago</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
-                        </a>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
-                            sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link"><i class="far fa-thumbs-up"></i> Like</a>
-                        <a href="#" class="card-link"><i class="far fa-comment"></i> Comment</a>
-                    </div>
-                </div>
-                <!-- End Post 3-->
-            </div>
-        </div>
-    </div>
-
-
+<?php endwhile; ?>
 <?php
     include 'template/footer.php';
 ?>

@@ -64,8 +64,8 @@
                       <ul class="nav">
                           <li class="nav-item">
                               <a href="extension.php" class="nav-link">
-                                  <i class="icon fas fa-pencil-alt"></i>
-                                  <span>Extension Requests</span>
+                                  <i class="icon fas fa-bars"></i>
+                                  <span>All Extensions</span>
                               </a>
                           </li>
                           <li class="nav-item">

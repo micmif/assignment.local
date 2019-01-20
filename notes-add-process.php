@@ -1,9 +1,7 @@
 <?php
     // This file will be used to process the add shows form.
     include 'libraries/form.php';
-
     include 'libraries/database.php';
-
     include 'libraries/login-check.php';
 
     // 1. check that the form has been sent.
